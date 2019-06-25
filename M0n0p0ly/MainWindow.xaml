@@ -1,0 +1,638 @@
+﻿<Window x:Class="M0n0p0ly.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M0n0p0ly"
+        mc:Ignorable="d"
+        Title="M0n0p0ly" Height="780" Width="1200"  WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="910"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="gridBoard" HorizontalAlignment="Left" Height="730" Margin="10,5,0,0" VerticalAlignment="Top" Width="900" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="107*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="119*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="94*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="93*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.ColumnSpan="11" Margin="0,0,0.009,1" Grid.RowSpan="11" Source="Images/monopoly_board.jpg" Stretch="Fill"/>
+            <Button x:Name="btnRoll" Grid.ColumnSpan="2" Content="Roll" Grid.Column="8" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Center" Width="75" Height="30" Click="BtnRoll_Click"/>
+            <Button x:Name="btnEndTurn" Grid.ColumnSpan="2" Content="End Turn" Grid.Column="8" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="75" Height="30" Click="BtnEndTurn_Click" IsEnabled="False"/>
+            <TextBlock x:Name="tbVictoryCondition" Text="Victory Condition:             The player with the most money after 20 turns wins." TextWrapping="Wrap" TextAlignment="Center" FontSize="18" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Margin="0,59.6,0,0" Grid.Row="3" VerticalAlignment="Top" Width="224" Height="121" Grid.RowSpan="3"/>
+            <Button x:Name="btnExit" Grid.ColumnSpan="2" Content="Exit" Grid.Column="2" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="9" VerticalAlignment="Center" Width="75" Click="BtnExit_Click"/>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Right" Margin="0,65,10,0" Grid.Row="10" TextWrapping="Wrap" Text="Jail" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.435,1" FontSize="16"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Marvin Gardens" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Water
+                       Works" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Ventnor Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Atlantic Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="B. &amp; O. Railroad" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="6" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Illinois Aveneue" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="7" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Indiana Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="8" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="9" HorizontalAlignment="Left" Margin="0,49,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Kentucky Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Left" Margin="24,62,0,0" Grid.Row="10" TextWrapping="Wrap" Text="Free" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.635,1.675" FontSize="16"/>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="57,27,-9,0" Grid.Row="10" TextWrapping="Wrap" Text="Parking" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="16">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,15,0,0" Grid.Row="9" TextWrapping="Wrap" Text="New York Avenue" VerticalAlignment="Top" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,15,0,0" Grid.Row="8" TextWrapping="Wrap" Text="Tennessee Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,17,0,0" Grid.Row="7" TextWrapping="Wrap" Text="Community Chest" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="10">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,15,0,0" Grid.Row="6" TextWrapping="Wrap" Text="St. James Place" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,7,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Pennsyl- vania Railroad" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,15,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Virginia Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,15,0,0" Grid.Row="3" TextWrapping="Wrap" Text="States Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,15,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Electric Company" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="49,15,0,0" Grid.Row="1" TextWrapping="Wrap" Text="St. Charles Place" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Center" Margin="62,37,-14,0" Grid.Row="0" TextWrapping="Wrap" Text="In/Visiting" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="16">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="10" HorizontalAlignment="Left" Margin="8,14,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Jail" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.482,-0.865" FontSize="16">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform X="2.592" Y="56.785"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="9" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Connecticut Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="8" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Vermont Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="7" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="6" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Oriental Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Reading Railroad" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Income       Tax" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Baltic
+                       Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="3,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Community Chest" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Mediterran-ean Avenue" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,15,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Pass" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="16">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,0,47,20" Grid.Row="0" TextWrapping="Wrap" Text="Go" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="16">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,0,47,20" Grid.Row="1" TextWrapping="Wrap" Text="Boardwalk" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,0,47,10" Grid.Row="2" TextWrapping="Wrap" Text="Luxury    Tax" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,0,47,10" Grid.Row="3" TextWrapping="Wrap" Text="Park    Place" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,0,47,20" Grid.Row="4" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,0,47,5" Grid.Row="5" TextWrapping="Wrap" Text="Short    Line Railroad" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,0,47,5" Grid.Row="6" TextWrapping="Wrap" Text="Pennsyl-vania Avenue" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="-1,0,44,15" Grid.Row="7" TextWrapping="Wrap" Text="Community Chest" VerticalAlignment="Bottom" Width="64" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="10">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="-4,0,51.96,5" Grid.Row="8" TextWrapping="Wrap" Text="North Carolina Avenue" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="0,0,46.96,13" Grid.Row="9" TextWrapping="Wrap" Text="Pacific Avenue" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Column="0" HorizontalAlignment="right" Margin="-11,26,59,0" Grid.Row="10" TextWrapping="Wrap" Text="Go To" VerticalAlignment="Top" Width="60" TextAlignment="Center" RenderTransformOrigin="0.453,1.394" FontSize="16">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-11.484" Y="-17.124"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue1" Grid.Column="1" HorizontalAlignment="Left" Margin="2,54,0,0" Grid.Row="0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue3" Grid.Column="3" HorizontalAlignment="Left" Margin="2,54,0,0" Grid.Row="0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue4" Grid.Column="4" HorizontalAlignment="Left" Margin="2,54,0,0" Grid.Row="0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue5" Grid.Column="5" HorizontalAlignment="Left" Margin="2,54,0,0" Grid.Row="0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue6" Grid.Column="6" HorizontalAlignment="Left" Margin="2,54,0,0" Grid.Row="0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue8" Grid.Column="8" HorizontalAlignment="Left" Margin="2,54,0,0" Grid.Row="0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue9" Grid.Column="9" HorizontalAlignment="Left" Margin="2,54,0,0" Grid.Row="0" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue11" Grid.Column="10" HorizontalAlignment="Center" Margin="10.351,24,50.716,0" Grid.Row="1" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue13" Grid.Column="10" HorizontalAlignment="Center" Margin="10.351,25,50.716,0" Grid.Row="3" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue14" Grid.Column="10" HorizontalAlignment="Center" Margin="10.351,23,50.716,0" Grid.Row="4" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue12" Grid.Column="10" HorizontalAlignment="Center" Margin="9.351,24,51.716,0" Grid.Row="2" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue15" Grid.Column="10" HorizontalAlignment="Center" Margin="10.351,25,50.716,0" Grid.Row="5" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue16" Grid.Column="10" HorizontalAlignment="Center" Margin="11.351,25,49.716,0" Grid.Row="6" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue18" Grid.Column="10" HorizontalAlignment="Center" Margin="11.351,22,49.716,0" Grid.Row="8" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue19" Grid.Column="10" HorizontalAlignment="Center" Margin="11.351,21,49.716,0" Grid.Row="9" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="59" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue21" Grid.Column="9" HorizontalAlignment="Left" Margin="0,25,0,0" Grid.Row="10" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock x:Name="tbValue23" Grid.Column="7" HorizontalAlignment="Left" Margin="0.342,25,0,0" Grid.Row="10" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock x:Name="tbValue24" Grid.Column="6" HorizontalAlignment="Left" Margin="3.342,25,0,0" Grid.Row="10" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="tbValue25" Grid.Column="5" HorizontalAlignment="Left" Margin="3.342,25,0,0" Grid.Row="10" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="tbValue26" Grid.Column="4" HorizontalAlignment="Left" Margin="0.009,25,0,0" Grid.Row="10" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock x:Name="tbValue27" Grid.Column="3" HorizontalAlignment="Left" Margin="3.673,25,0,0" Grid.Row="10" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="tbValue28" Grid.Column="2" HorizontalAlignment="Left" Margin="1.336,25,0,0" Grid.Row="10" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center"/>
+            <TextBlock x:Name="tbValue29" HorizontalAlignment="Left" Margin="107,25,0,0" Grid.Row="10" TextWrapping="Wrap" Text="$" VerticalAlignment="Top" Width="72" TextAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="tbValue31" Grid.Column="0" HorizontalAlignment="right" Margin="0,0,8,21" Grid.Row="9" TextWrapping="Wrap" Text="$" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue32" Grid.Column="0" HorizontalAlignment="right" Margin="0,0,9,19" Grid.Row="8" TextWrapping="Wrap" Text="$" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue34" Grid.Column="0" HorizontalAlignment="right" Margin="0,0,6,18" Grid.Row="6" TextWrapping="Wrap" Text="$" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue35" Grid.Column="0" HorizontalAlignment="right" Margin="0,0,7,21" Grid.Row="5" TextWrapping="Wrap" Text="$" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue37" Grid.Column="0" HorizontalAlignment="right" Margin="0,0,7,21" Grid.Row="3" TextWrapping="Wrap" Text="$" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue38" Grid.Column="0" HorizontalAlignment="right" Margin="0,0,8,19" Grid.Row="2" TextWrapping="Wrap" Text="$" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="tbValue39" Grid.Column="0" HorizontalAlignment="right" Margin="0,0,8,20" Grid.Row="1" TextWrapping="Wrap" Text="$" VerticalAlignment="Bottom" Width="60" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="btnSave" Grid.ColumnSpan="2" Content="Save Game" Grid.Column="2" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="75" Click="BtnSave_Click"/>
+            <Button x:Name="btnLoad" Grid.ColumnSpan="2" Content="Load Game" Grid.Column="2" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="8" VerticalAlignment="Center" Width="75" Click="BtnLoad_Click"/>
+        </Grid>
+        <GroupBox x:Name="grpInventory" Grid.Column="1" Header="Inventory" HorizontalAlignment="Left" Height="730" Margin="4.6,5,0,0" VerticalAlignment="Top" Width="265">
+            <Grid x:Name="gridInventory" HorizontalAlignment="Center" Height="700" Margin="0,0,0,0" VerticalAlignment="Center" Width="250">
+                <Label x:Name="lblPlayerName" Content="Player Name" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Top" Height="60" Width="230" FontSize="36" FontWeight="Bold"/>
+                <Label x:Name="lblTurnCount" Content="Turn: 1 (1/1)" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" Height="25" Width="230" FontSize="12"/>
+                <Label x:Name="lblRollTitle" Content="Roll:" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Height="40" Width="230" FontSize="24" FontWeight="Bold"/>
+                <Label x:Name="lblRollResult" Content="--   --" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" Height="70" Width="230" FontSize="36"/>
+                <Label x:Name="lblLocationTitle" Content="Location:" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" Height="40" Width="230" FontSize="24" FontWeight="Bold"/>
+                <Label x:Name="lblLocationResult" Content="(0) Go" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Height="40" Width="230" FontSize="20"/>
+                <Label x:Name="lblMoneyTitle" Content="Money:" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Height="45" Width="230" FontSize="24" FontWeight="Bold"/>
+                <Label x:Name="lblMoneyResult" Content="$1,500" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,330,0,0" VerticalAlignment="Top" Height="45" Width="230" FontSize="24"/>
+                <Label x:Name="lblPropertiesOwnedTitle" Content="Properties Owned: " HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,390,0,0" VerticalAlignment="Top" Height="40" Width="230" FontSize="20" FontWeight="Bold"/>
+                <ListBox x:Name="lbPropertiesOwned" HorizontalAlignment="Center" Height="250" Margin="0,430,0,0" VerticalAlignment="Top" Width="200" FontSize="16"/>
+                <Image x:Name="imgPlayer" HorizontalAlignment="Left" Height="58" Margin="10,47,0,0" VerticalAlignment="Top" Width="61" Source="Images/car.png"/>
+            </Grid>
+
+        </GroupBox>
+
+    </Grid>
+</Window>

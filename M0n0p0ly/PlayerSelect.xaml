@@ -1,0 +1,101 @@
+﻿<Window x:Class="M0n0p0ly.PlayerSelect"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M0n0p0ly"
+        mc:Ignorable="d"
+        Title="Player Selection" Height="438" Width="705" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <GroupBox x:Name="grpBox1" Header="Player 1" HorizontalAlignment="Left" Height="327" Margin="17,20,0,0" VerticalAlignment="Top" Width="160">
+            <Grid Margin="0,0,0,2">
+                <Label Content="Enter Name" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtBoxName1" HorizontalAlignment="Left" Height="23" Margin="11,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <RadioButton x:Name="rbCar1" Content="Car" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="rbDog1" Content="Dog" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbHat1" Content="Hat" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbIron1" Content="Iron" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbShip1" Content="Ship" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbShoe1" Content="Shoe" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbThimble1" Content="Thimble" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbWheelbarrow1" Content="Wheelbarrow" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,70,0,0" VerticalAlignment="Top" Width="20" Source="Images/car.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,100,0,0" VerticalAlignment="Top" Width="20" Source="Images/dog.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,130,0,0" VerticalAlignment="Top" Width="20" Source="Images/hat.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,160,0,0" VerticalAlignment="Top" Width="20" Source="Images/iron.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,190,0,0" VerticalAlignment="Top" Width="20" Source="Images/ship.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,220,0,0" VerticalAlignment="Top" Width="20" Source="Images/shoe.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,250,0,0" VerticalAlignment="Top" Width="20" Source="Images/thimble.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,280,0,0" VerticalAlignment="Top" Width="20" Source="Images/wheelbarrow.png"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="597,365,0,0" VerticalAlignment="Top" Width="75" Click="BtnStart_Click"/>
+        <GroupBox x:Name="grpBox2" Header="Player 2" HorizontalAlignment="Left" Height="327" Margin="182,20,0,0" VerticalAlignment="Top" Width="160">
+            <Grid Margin="0,0,0,2">
+                <Label Content="Enter Name" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtBoxName2" HorizontalAlignment="Left" Height="23" Margin="11,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <RadioButton x:Name="rbCar2" Content="Car" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbDog2" Content="Dog" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="rbHat2" Content="Hat" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbIron2" Content="Iron" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbShip2" Content="Ship" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbShoe2" Content="Shoe" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbThimble2" Content="Thimble" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbWheelbarrow2" Content="Wheelbarrow" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,70,0,0" VerticalAlignment="Top" Width="20" Source="Images/car.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,100,0,0" VerticalAlignment="Top" Width="20" Source="Images/dog.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,130,0,0" VerticalAlignment="Top" Width="20" Source="Images/hat.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,160,0,0" VerticalAlignment="Top" Width="20" Source="Images/iron.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,190,0,0" VerticalAlignment="Top" Width="20" Source="Images/ship.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,220,0,0" VerticalAlignment="Top" Width="20" Source="Images/shoe.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,250,0,0" VerticalAlignment="Top" Width="20" Source="Images/thimble.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,280,0,0" VerticalAlignment="Top" Width="20" Source="Images/wheelbarrow.png"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grpBox3" Header="Player 3" HorizontalAlignment="Left" Height="327" Margin="347,20,0,0" VerticalAlignment="Top" Width="160">
+            <Grid Margin="0,0,0,2">
+                <Label Content="Enter Name" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtBoxName3" HorizontalAlignment="Left" Height="23" Margin="11,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <RadioButton x:Name="rbCar3" Content="Car" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbDog3" Content="Dog" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbHat3" Content="Hat" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="rbIron3" Content="Iron" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbShip3" Content="Ship" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbShoe3" Content="Shoe" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbThimble3" Content="Thimble" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbWheelbarrow3" Content="Wheelbarrow" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,70,0,0" VerticalAlignment="Top" Width="20" Source="Images/car.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,100,0,0" VerticalAlignment="Top" Width="20" Source="Images/dog.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,130,0,0" VerticalAlignment="Top" Width="20" Source="Images/hat.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,160,0,0" VerticalAlignment="Top" Width="20" Source="Images/iron.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,190,0,0" VerticalAlignment="Top" Width="20" Source="Images/ship.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,220,0,0" VerticalAlignment="Top" Width="20" Source="Images/shoe.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,250,0,0" VerticalAlignment="Top" Width="20" Source="Images/thimble.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,280,0,0" VerticalAlignment="Top" Width="20" Source="Images/wheelbarrow.png"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grpBox4" Header="Player 4" HorizontalAlignment="Left" Height="327" Margin="512,20,0,0" VerticalAlignment="Top" Width="160">
+            <Grid Margin="0,0,0,2">
+                <Label Content="Enter Name" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtBoxName4" HorizontalAlignment="Left" Height="23" Margin="11,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <RadioButton x:Name="rbCar4" Content="Car" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbDog4" Content="Dog" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbHat4" Content="Hat" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbIron4" Content="Iron" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="rbShip4" Content="Ship" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbShoe4" Content="Shoe" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbThimble4" Content="Thimble" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rbWheelbarrow4" Content="Wheelbarrow" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,70,0,0" VerticalAlignment="Top" Width="20" Source="Images/car.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,100,0,0" VerticalAlignment="Top" Width="20" Source="Images/dog.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,130,0,0" VerticalAlignment="Top" Width="20" Source="Images/hat.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,160,0,0" VerticalAlignment="Top" Width="20" Source="Images/iron.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,190,0,0" VerticalAlignment="Top" Width="20" Source="Images/ship.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,220,0,0" VerticalAlignment="Top" Width="20" Source="Images/shoe.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,250,0,0" VerticalAlignment="Top" Width="20" Source="Images/thimble.png"/>
+                <Image HorizontalAlignment="Left" Height="15" Margin="120,280,0,0" VerticalAlignment="Top" Width="20" Source="Images/wheelbarrow.png"/>
+            </Grid>
+        </GroupBox>
+        <Label Content="Please enter a name for each player (minimum of 2 players) and choose unique icons." HorizontalAlignment="Left" VerticalAlignment="Top" AllowDrop="True" Margin="70,362,0,0" Width="466"/>
+    </Grid>
+</Window>

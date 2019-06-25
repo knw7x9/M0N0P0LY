@@ -1,0 +1,15 @@
+Advance to "Go". (Collect $200).|Advance|NotNearest|Go|true||
+Bank error in your favor. Collect $200.|Collect|Once|200|||
+Doctor fees. Pay $50.|Pay|Once|50|||
+From sale of stock you get $50.|Collect|Once|50|||
+Go to Jail. Go directly to jail. Do not pass Go, Do not collect $200.|Advance|NotNearest|Jail|false||
+Grand Opera Night Collect $50 from every player for opening night seats.|Collect|Every|50|||
+Holiday Fund matures. Receive $100.|Collect|Once|100|||
+Income tax refund. Collect $20.|Collect|Once|20|||
+It is your birthday. Collect $10 from every player.|Collect|Every|10|||
+Life insurance matures Collect $100.|Collect|Once|100|||
+Hospital Fees. Pay $50.|Pay|Once|50|||
+School fees. Pay $50.|Pay|Once|50|||
+Receive $25 consultancy fee.|Collect|Once|25|||
+You have won second prize in a beauty contest. Collect $10.|Collect|Once|10|||
+You inherit $100.|Collect|Once|100|||

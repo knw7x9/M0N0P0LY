@@ -1,0 +1,14 @@
+Advance to "Go".|Advance|NotNearest|Go|true||
+Advance to Illinois Avenue. If you pass Go, collect $200.|Advance|NotNearest|Illinois Avenue|true||
+Advance to St. Charles Place. If you pass Go, collect $200.|Advance|NotNearest|St. Charles Place|true||
+Advance token to nearest Utility. If unowned, you may buy it from the Bank. If owned, you must pay owner a total of 10 times your previous dice roll.|Advance|Nearest|Utility|true|Roll|10
+Advance token to the nearest Railroad and pay owner twice the rental to which he/she is otherwise entitled. If Railroad is unowned, you may buy it from the Bank.|Advance|Nearest|Railroad|true|Rent|2
+Bank pays you dividend of $50.|Collect|Once|50|||
+Go Back Three Spaces.|Advance|NotNearest|Location|false|-3|
+Go to Jail. Go directly to Jail. Do not pass GO, do not collect $200.|Advance|NotNearest|Jail|false||
+Pay poor tax of $15.|Pay|Once|15|||
+Take a trip to Reading Railroad. If you pass Go, collect $200.|Advance|NotNearest|Reading Railroad|true||
+Take a walk on the Boardwalk. Advance token to Boardwalk.|Advance|NotNearest|Boardwalk|true||
+You have been elected Chairman of the Board. Pay each player $50.|Pay|Every|50|||
+Your building loan matures. Receive $150.|Collect|Once|150|||
+You have won a crossword competition. Collect $100.|Collect|Once|100|||

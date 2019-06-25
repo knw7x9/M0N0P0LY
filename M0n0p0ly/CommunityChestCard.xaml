@@ -1,0 +1,14 @@
+﻿<Window x:Class="M0n0p0ly.CommunityChestCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M0n0p0ly"
+        mc:Ignorable="d" Height="297" Width="354" WindowStartupLocation="CenterOwner" Title="Community Chest Card" ResizeMode="NoResize">
+    <Grid Background="#FFFCE340">
+        <TextBlock x:Name="tbCommunityChestCard" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="285" FontSize="36" Text="Community Chest" TextAlignment="Center" FontFamily="Monotype Corsiva"/>
+        <TextBlock x:Name="tbOutputCommunityChest" HorizontalAlignment="Left" Margin="30,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="285" Height="160" FontFamily="Comic Sans MS" FontWeight="Bold" TextAlignment="Center"/>
+        <Button x:Name="btnOk" Content="Ok" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="120" Height="25" FontSize="16" Click="btnOk_Click"/>
+
+    </Grid>
+</Window>
